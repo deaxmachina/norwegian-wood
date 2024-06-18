@@ -9,7 +9,7 @@
   
   /* spacing */
   /* this is what defines the global scale */
-  --baseline: 12px;
+  --baseline: 18px;
   
   /* fonts */
   --book-title: 'Tulpen One', sans-serif;
@@ -140,7 +140,7 @@ text {
       position: absolute;
       width: 100%;
       height: 100%;
-      padding: 0 calc(var(--baseline) * 1.8);
+      padding: 0 calc(var(--baseline) * 1.2);
       transform: rotateY(180deg) translateZ(1px);
     }
     
@@ -158,7 +158,7 @@ text {
         text-transform: uppercase;
         letter-spacing: 3px;
         color: var(--dark-text);
-        margin-top: calc(var(--baseline) * 5);
+        margin-top: calc(var(--baseline) * 3);
         margin-bottom: calc(var(--baseline) * 2);
       }
       
@@ -203,8 +203,8 @@ text {
         font-size: calc(var(--base-size) * 1);
         text-transform: uppercase;
         letter-spacing: 1px;
-        margin-top: calc(var(--baseline) * 5);
-        margin-bottom: calc(var(--baseline) * 3);
+        margin-top: calc(var(--baseline) * 2);
+        margin-bottom: calc(var(--baseline) * 2);
       }
       
       &-table {
@@ -263,4 +263,41 @@ text {
       transform: rotateY(-180deg);
     }
   }
+}
+
+
+.wrapper-butterfly {
+  display: flex;
+  flex-direction: row;
+  .butterfly {
+    position: relative;
+    top: -10px;
+    width: 40%;
+    img {
+      width: 100%;
+    }
+  }
+  .page__content-text{
+    width: 60%;
+    font-weight: 100;
+  }
+}
+
+.flower {
+  height: 100px;
+  width: 100%;
+  display: block;
+  img {
+    width: 100%;
+    max-height: 100%;
+    display: block;
+    object-fit: scale-down;
+  }
+}
+
+.name {
+  font-weight: bold;
+}
+.norwegian-wood {
+  font-weight: bold;
 }
