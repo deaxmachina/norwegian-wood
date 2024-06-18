@@ -1,0 +1,572 @@
+[
+	{
+		"artist": "the Beatles",
+		"song": "Norwegian Wood",
+		"type": "named song",
+		"page": 5
+	},
+	{
+		"artist": "Billy Joel",
+		"song": "",
+		"type": "unnamed song",
+		"page": 5
+	},
+	{
+		"artist": "Henri Mancini",
+		"song": "Dear Heart",
+		"type": "named song",
+		"page": 44
+	},
+	{
+		"artist": "Brahms",
+		"song": "Fourth Symphony",
+		"type": "named song",
+		"page": 44
+	},
+	{
+		"artist": "Sgt. Pepper's Lonely Hearts Club Band",
+		"song": "",
+		"type": "unnamed song",
+		"page": 47
+	},
+	{
+		"artist": "Bill Evans",
+		"song": "Waltz for Debbie",
+		"type": "named song",
+		"page": 47
+	},
+	{
+		"artist": "Jim Morrison",
+		"song": "",
+		"type": "artist mention",
+		"page": 60
+	},
+	{
+		"artist": "Miles Davis",
+		"song": "",
+		"type": "artist mention",
+		"page": 60
+	},
+	{
+		"artist": "",
+		"song": "Lemon Tree",
+		"type": "named song",
+		"page": 90
+	},
+	{
+		"artist": "",
+		"song": "Puff (The Magic Dragon)",
+		"type": "named song",
+		"page": 90
+	},
+	{
+		"artist": "",
+		"song": "Five Hundred Miles",
+		"type": "named song",
+		"page": 90
+	},
+	{
+		"artist": "",
+		"song": "Where Have All the Flowers Gone?",
+		"type": "named song",
+		"page": 90
+	},
+	{
+		"artist": "",
+		"song": "Michael, Row the Boat Ashore",
+		"type": "named song",
+		"page": 90
+	},
+	{
+		"artist": "Leonard Bernstein",
+		"song": "",
+		"type": "unnamed album",
+		"page": 96
+	},
+	{
+		"artist": "Marvin Gaye",
+		"song": "",
+		"type": "artist mention",
+		"page": 99
+	},
+	{
+		"artist": "the Bee Gees",
+		"song": "",
+		"type": "artist mention",
+		"page": 99
+	},
+	{
+		"artist": "Mahler",
+		"song": "",
+		"type": "artist mention",
+		"page": 106
+	},	
+	{
+		"artist": "the Beatles",
+		"song": "",
+		"type": "artist mention",
+		"page": 106
+	},
+	{
+		"artist": "Bill Evans",
+		"song": "",
+		"type": "unnamed album",
+		"page": 129
+	},	
+	{
+		"artist": "Bach",
+		"song": "",
+		"type": "unnamed song",
+		"page": 130
+	},
+	{
+		"artist": "the Beatles",
+		"song": "Michelle",
+		"type": "named song",
+		"page": 131
+	},
+	{
+		"artist": "the Beatles",
+		"song": "Nowhere Man",
+		"type": "named song",
+		"page": 131
+	},	
+	{
+		"artist": "the Beatles",
+		"song": "Julia",
+		"type": "named song",
+		"page": 131
+	},
+	{
+		"artist": "the Beatles",
+		"song": "Norwegian Wood",
+		"type": "named song",
+		"page": 131
+	},
+	{
+		"artist": "Bach",
+		"song": "",
+		"type": "unnamed song",
+		"page": 133
+	},	
+	{
+		"artist": "Bach",
+		"song": "",
+		"type": "artist mention",
+		"page": 146
+	},
+	{
+		"artist": "Mozart",
+		"song": "",
+		"type": "artist mention",
+		"page": 146
+	},
+	{
+		"artist": "Scarlatti",
+		"song": "",
+		"type": "artist mention",
+		"page": 146
+	},	
+	{
+		"artist": "Bach",
+		"song": "",
+		"type": "artist mention",
+		"page": 149
+	},
+	{
+		"artist": "",
+		"song": "Proud Mary",
+		"type": "named song",
+		"page": 162
+	},
+	{
+		"artist": "Blood, Sweat and Tears",
+		"song": "Spinning Wheel",
+		"type": "named song",
+		"page": 167
+	},	
+	{
+		"artist": "Cream",
+		"song": "White Room",
+		"type": "named song",
+		"page": 168
+	},
+	{
+		"artist": "Simon and Garfunkel",
+		"song": "Scarborough Fair",
+		"type": "named song",
+		"page": 168
+	},
+	{
+		"artist": "Mozart",
+		"song": "",
+		"type": "artist mention",
+		"page": 0
+	},
+	{
+		"artist": "the Beatles",
+		"song": "Here Comes the Sun",
+		"type": "named song",
+		"page": 169
+	},
+	{
+		"artist": "Bach",
+		"song": "",
+		"type": "artist mention",
+		"page": 178
+	},
+	{
+		"artist": "Bud Powell",
+		"song": "",
+		"type": "artist mention",
+		"page": 183
+	},
+	{
+		"artist": "Thelonious Monk",
+		"song": "",
+		"type": "artist mention",
+		"page": 183
+	},
+	{
+		"artist": "",
+		"song": "Desafinado",
+		"type": "named song",
+		"page": 195
+	},
+	{
+		"artist": "",
+		"song": "The Girl from Ipanema",
+		"type": "named song",
+		"page": 195
+	},
+	{
+		"artist": "Bacharach",
+		"song": "",
+		"type": "artist mention",
+		"page": 195
+	},
+	{
+		"artist": "Lennon and McCartney",
+		"song": "",
+		"type": "artist mention",
+		"page": 195
+	},
+	{
+		"artist": "Tony Bennett",
+		"song": "",
+		"type": "artist mention",
+		"page": 198
+	},
+	{
+		"artist": "Rolling Stones",
+		"song": "Jumpin' Jack Flash",
+		"type": "named song",
+		"page": 199
+	},
+	{
+		"artist": "Jim Morrison",
+		"song": "",
+		"type": "artist mention",
+		"page": 203
+	},
+	{
+		"artist": "Thelonious Monk",
+		"song": "Honeysuckle Rose",
+		"type": "named song",
+		"page": 205
+	},
+	{
+		"artist": "John Coltrane",
+		"song": "",
+		"type": "artist mention",
+		"page": 215
+	},
+	{
+		"artist": "Ornette Coleman",
+		"song": "",
+		"type": "artist mention",
+		"page": 238
+	},
+	{
+		"artist": "Bud Powell",
+		"song": "",
+		"type": "artist mention",
+		"page": 238
+	},
+	{
+		"artist": "",
+		"song": "Norwegian Wood",
+		"type": "named song",
+		"page": 250
+	},
+	{
+		"artist": "Miles Davis",
+		"song": "",
+		"type": "artist mention",
+		"page": 259
+	},
+	{
+		"artist": "",
+		"song": "Kind of Blue",
+		"type": "named song",
+		"page": 261
+	},
+	{
+		"artist": "John Coltrane",
+		"song": "",
+		"type": "artist mention",
+		"page": 282
+	},
+	{
+		"artist": "The Drifters",
+		"song": "Up on the Roof",
+		"type": "named song",
+		"page": 292
+	},
+	{
+		"artist": "Mozart",
+		"song": "",
+		"type": "artist mention",
+		"page": 306
+	},
+	{
+		"artist": "Ravel",
+		"song": "",
+		"type": "artist mention",
+		"page": 306
+	},
+	{
+		"artist": "Robert Casadesus",
+		"song": "",
+		"type": "artist mention",
+		"page": 306
+	},
+	{
+		"artist": "Antonio Carlos Jobim",
+		"song": "Desafinado",
+		"type": "named song",
+		"page": 335
+	},
+	{
+		"artist": "the Beatles",
+		"song": "Norwegian Wood",
+		"type": "named song",
+		"page": 338
+	},
+	{
+		"artist": "the Beatles",
+		"song": "Michael",
+		"type": "named song",
+		"page": 338
+	},
+	{
+		"artist": "Bach",
+		"song": "",
+		"type": "artist mention",
+		"page": 341
+	},
+	{
+		"artist": "Henri Mancini",
+		"song": "Dear Heart",
+		"type": "named song",
+		"page": 345
+	},
+	{
+		"artist": "the Beatles",
+		"song": "Norwegian Wood",
+		"type": "named song",
+		"page": 345
+	},
+	{
+		"artist": "the Beatles",
+		"song": "Yesterday",
+		"type": "named song",
+		"page": 345
+	},
+	{
+		"artist": "the Beatles",
+		"song": "Michelle",
+		"type": "named song",
+		"page": 345
+	},
+	{
+		"artist": "the Beatles",
+		"song": "Something",
+		"type": "named song",
+		"page": 345
+	},
+	{
+		"artist": "the Beatles",
+		"song": "Here Comes the Sun",
+		"type": "named song",
+		"page": 345
+	},
+	{
+		"artist": "the Beatles",
+		"song": "the Fool on the Hill",
+		"type": "named song",
+		"page": 345
+	},
+	{
+		"artist": "the Beatles",
+		"song": "Penny Lane",
+		"type": "named song",
+		"page": 345
+	},
+	{
+		"artist": "the Beatles",
+		"song": "Blackbird",
+		"type": "named song",
+		"page": 345
+	},
+	{
+		"artist": "the Beatles",
+		"song": "Julia",
+		"type": "named song",
+		"page": 345
+	},
+	{
+		"artist": "the Beatles",
+		"song": "When I'm 64",
+		"type": "named song",
+		"page": 345
+	},
+	{
+		"artist": "the Beatles",
+		"song": "Nowhere Man",
+		"type": "named song",
+		"page": 345
+	},
+	{
+		"artist": "the Beatles",
+		"song": "And I Love Her",
+		"type": "named song",
+		"page": 345
+	},
+	{
+		"artist": "the Beatles",
+		"song": "Hey Jude",
+		"type": "named song",
+		"page": 345
+	},
+	{
+		"artist": "",
+		"song": "Up on the Roof",
+		"type": "named song",
+		"page": 346
+	},
+	{
+		"artist": "Ravel",
+		"song": "Pavane for a Dying Queen",
+		"type": "named song",
+		"page": 346
+	},
+	{
+		"artist": "Debussy",
+		"song": "Claire de Lune",
+		"type": "named song",
+		"page": 346
+	},
+	{
+		"artist": "Bacharach",
+		"song": "Close to You",
+		"type": "named song",
+		"page": 346
+	},
+	{
+		"artist": "Bacharach",
+		"song": "Raindrops Keep Falling on my Head",
+		"type": "named song",
+		"page": 346
+	},
+	{
+		"artist": "Bacharach",
+		"song": "Walk on By",
+		"type": "named song",
+		"page": 346
+	},
+	{
+		"artist": "Bacharach",
+		"song": "Wedding Bell Blues",
+		"type": "named song",
+		"page": 346
+	},
+	{
+		"artist": "Rogers and Hart",
+		"song": "",
+		"type": "artist mention",
+		"page": 346
+	},
+	{
+		"artist": "Gershwin",
+		"song": "",
+		"type": "artist mention",
+		"page": 346
+	},
+	{
+		"artist": "Bob Dylan",
+		"song": "",
+		"type": "artist mention",
+		"page": 346
+	},
+	{
+		"artist": "Ray Charles",
+		"song": "",
+		"type": "artist mention",
+		"page": 346
+	},
+	{
+		"artist": "Carole King",
+		"song": "",
+		"type": "artist mention",
+		"page": 346
+	},
+	{
+		"artist": "The Beach Boys",
+		"song": "",
+		"type": "artist mention",
+		"page": 346
+	},
+	{
+		"artist": "Stevie Wonder",
+		"song": "",
+		"type": "artist mention",
+		"page": 346
+	},
+	{
+		"artist": "Kyu Sakamoto",
+		"song": "Sukiyaki Song",
+		"type": "named song",
+		"page": 346
+	},
+	{
+		"artist": "",
+		"song": "Blue Velvet",
+		"type": "named song",
+		"page": 346
+	},
+	{
+		"artist": "",
+		"song": "Green Fields",
+		"type": "named song",
+		"page": 346
+	},
+	{
+		"artist": "",
+		"song": "Eleanor Rigby",
+		"type": "named song",
+		"page": 346
+	},
+	{
+		"artist": "the Beatles",
+		"song": "Norwegian Wood",
+		"type": "named song",
+		"page": 346
+	},
+	{
+		"artist": "Bach",
+		"song": "",
+		"type": "artist mention",
+		"page": 347
+	}
+]
