@@ -29,6 +29,7 @@ let ctx
 let side 
 let horde
 let simulation
+let looping = false
 
 ///////////////////////////////
 ////////// Preload ////////////
@@ -100,6 +101,27 @@ function setup() {
       music = [...music]
     })
 	
+		// Events
+		const overlay = document.querySelector('.overlay')
+		const wrapperAbout = document.querySelector('.wrapper-about')
+		const bookPageOne = document.querySelector('.book__page.book__page--1')
+		const bookPullout = document.querySelector('.pullout')
+		overlay.addEventListener('click', () => {
+			wrapperAbout.style.left = '100%'
+			wrapperAbout.style.transform = 'translate(0%, -50%)'
+			overlay.style.opacity = 0
+			overlay.style.pointerEvents = 'none'
+			looping = true
+			loop()
+		})
+		bookPullout.addEventListener('click', () => {
+			wrapperAbout.style.left = '50%'
+			wrapperAbout.style.transform = 'translate(-50%, -50%)'
+			overlay.style.opacity = 1
+			overlay.style.pointerEvents = 'all'
+			looping = false
+			noLoop()
+		})
 }
 
 
@@ -119,6 +141,12 @@ let rotateMidori = -0.5*Math.PI
 
 function draw() {
 	background(bgCol)
+
+	if (looping) {
+		loop()
+	} else {
+		noLoop()
+	}
 	
 	// Kumiko
 	push()

@@ -3,7 +3,7 @@
 :root {
   /* colors */
   --body-bg: #FAFAFA;
-  --page-bg: #F5F5F5;
+  --page-bg: rgb(232, 232, 232);
   --dark-text: #2A2935;
   /* spacing */
   /* this is what defines the global scale */
@@ -17,12 +17,14 @@
 
 * {
   box-sizing: border-box;
+  font-family: "Cormorant Garamond", serif;
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
+  background: #161212;
 }
 
 text {
@@ -40,6 +42,69 @@ text {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.overlay .overlay-instructions {
+  position: absolute;
+  top: 20%;
+  right: 10%;
+}
+@media (max-width: 1450px) {
+  .overlay .overlay-instructions {
+    right: 30px;
+  }
+}
+@media (max-width: 1300px) {
+  .overlay .overlay-instructions {
+    right: 10px;
+  }
+}
+.overlay .overlay-instructions svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-40%, -40%);
+}
+.overlay .overlay-instructions .overlay-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  color: var(--page-bg);
+  transform: translate(25px, -40%);
+}
+.overlay .overlay-instructions .circles {
+  height: 200px;
+  width: 200px;
+  position: relative;
+}
+.overlay .overlay-instructions .circles > div {
+  animation: growAndFade 3s infinite ease-out;
+  background-color: #80ed99;
+  border-radius: 50%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+}
+.overlay .overlay-instructions .circles .circle1 {
+  animation-delay: 1s;
+}
+.overlay .overlay-instructions .circles .circle2 {
+  animation-delay: 2s;
+}
+.overlay .overlay-instructions .circles .circle3 {
+  animation-delay: 3s;
+}
+@keyframes growAndFade {
+  0% {
+    opacity: 0.25;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
 }
 
 .wrapper-about {
@@ -50,8 +115,34 @@ text {
   width: 90%;
   max-width: 900px;
   height: 80%;
+  min-height: 640px;
   max-height: 700px;
   background: white;
+  transition: all 0.5s ease;
+}
+.wrapper-about .pullout {
+  position: absolute;
+  left: -60px;
+  top: 70px;
+  width: 60px;
+  height: 60px;
+  background-color: #ad1450;
+  cursor: pointer;
+}
+.wrapper-about .pullout span {
+  display: inline-block;
+  transform: rotate(270deg);
+  padding-right: 40px;
+  color: var(--page-bg);
+}
+.wrapper-about .pullout-in-book {
+  position: absolute;
+  left: 0px;
+  top: 70px;
+  width: 80px;
+  height: 60px;
+  background-color: rgba(173, 20, 81, 0.5333333333);
+  z-index: 0;
 }
 
 .book-wrapper {

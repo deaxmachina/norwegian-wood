@@ -23,6 +23,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	
+	<script src="./instructionsEvents.js"></script>
 	<script src="./drawTriangle.js"></script>
 	<script src="./drawPolygon.js"></script>
 	<script src="./coloursAll.js"></script>
@@ -35,36 +36,83 @@
 </head>
 
 <body>   
-	<div class='overlay'></div>
+	<div class='overlay'>
+		<div class="overlay-instructions">
+			<svg width="20" height="20" x="0px" y="0px" viewBox="0 0 92.2 91.5" style="enable-background:new 0 0 92.2 91.5;" xml:space="preserve">
+				<g fill="rgb(232, 232, 232)" >
+					<path d="M91.1,50L38.6,36c-0.5-0.2-1.1,0-1.5,0.4c-0.4,0.4-0.6,1-0.4,1.5l14.1,52.5c0.2,0.6,0.7,1.1,1.3,1.1c0.1,0,0.1,0,0.2,0
+						c0.5,0,1.1-0.3,1.3-0.8l9.9-16.9l13.9,13.9c0.6,0.6,1.6,0.6,2.2,0l8.9-8.9c0.6-0.6,0.6-1.6,0-2.2L74.6,62.8l16.8-9.9
+						c0.5-0.3,0.8-0.9,0.8-1.6C92.1,50.7,91.7,50.2,91.1,50L91.1,50z"/>
+					<path d="M42.8,72.1c-10.9,1.6-21.7-2-29.5-9.8c-13.5-13.5-13.5-35.5,0-49c13.5-13.5,35.5-13.5,49.1,0c7.6,7.6,11.2,18,9.9,28.7
+						c-0.1,0.9,0.5,1.6,1.4,1.7c0.9,0.1,1.6-0.5,1.7-1.4c1.4-11.6-2.5-23-10.8-31.3C57.4,3.9,47.9,0,37.8,0C27.7,0,18.2,3.9,11.1,11.1
+						C3.9,18.2,0,27.7,0,37.8s3.9,19.6,11.1,26.7c7.2,7.2,16.7,11.1,26.7,11.1c1.8,0,3.7-0.1,5.5-0.4c0.9-0.1,1.4-0.9,1.3-1.8
+						C44.4,72.6,43.6,72,42.8,72.1L42.8,72.1z"/>
+					<path d="M49.8,25.8c3.1,3.1,4.9,7.3,5,11.7c0,0.9,0.7,1.5,1.6,1.5c0.9,0,1.6-0.7,1.5-1.6c-0.1-5.2-2.2-10.1-5.9-13.8
+						c-7.8-7.8-20.6-7.8-28.4,0c-3.8,3.8-5.9,8.8-5.9,14.2s2.1,10.4,5.9,14.2c3.8,3.8,8.8,5.9,14.2,5.9c0.2,0,0.4,0,0.6,0
+						c0.9,0,1.5-0.7,1.5-1.6c0-0.9-0.8-1.6-1.6-1.5c-4.7,0.1-9.1-1.6-12.5-4.9c-3.2-3.2-5-7.4-5-12c0-4.5,1.8-8.8,5-12
+						C32.4,19.2,43.2,19.2,49.8,25.8L49.8,25.8z"/>
+				</g>
+			</svg>
+			<span class="overlay-text">
+				click 
+				<br>
+				anywhere
+			</span>
+			<div class="circles">
+				<div class="circle1"></div>
+				<div class="circle2"></div>
+				<div class="circle3"></div>
+			</div>
+		</div>
+	</div>
 
 	<div class='wrapper-about'>
+		<div class="pullout"><span>PULL</span></div>
+		<div class="pullout-in-book"></div>
 		<div class="book-wrapper">
 			<div class="cover">
 				<div class="book">
-				<label for="page-1"  class="book__page book__page--1">
-					<img src="https://cdn.discordapp.com/attachments/996046569709244577/1252700281196646474/deaxmachina_norwegian_wood_by_haruki_murakami_41bf843c-c659-4833-ae8d-30bcbfd13a90.png?ex=66732b8d&is=6671da0d&hm=7a8b7ee088a83713b64f28af8c80aa8970da753bc6e0afc7d5808bcd6dfe6941&" alt="">
+				<label for="page-1" class="book__page book__page--1">
+					<img src="/assets/deaxmachina_norwegian_wood_by_haruki_murakami_41bf843c-c659-4833-ae8d-30bcbfd13a90.png" alt="">
 				</label>
 				
 				<label for="page-2" class="book__page book__page--4">
 					<div class="page__content">
-						<h1 class="page__content-title">I</h1>
+						<h1 class="page__content-title">About</h1>
 						<div class="page__content-blockquote">
-							<p class="page__content-blockquote-text">HARI SELDON — . . . born in the 11,988th year of the Galactic Era; died 12,069. The dates are more commonly given in terms of the current Foundational Era as -79 to the year 1 F.E. Born to middle-class parents on Helicon, Arcturus sector (where his father, in a legend of doubtful authenticity, was a tobacco grower in the hydroponic plants of the planet), he early showed amazing ability in mathematics. Anecdotes concerning his ability are innumerable, and some are contradictory. At the age of two, he is said to have. . . </p>
-							<p class="page__content-blockquote-text">. . . Undoubtedly his greatest contributions were in the field of psychohistory. Seldon found the field little more than a set of vague axioms; he left it a profound statistical science. . . . </p>
-							<p class="page__content-blockquote-text">. . . The best existing authority we have for the details of his life is the biography written by Gaal Dornick who, as a young man, met Seldon two years before the great mathematician's death. The story of the meeting . . .</p>
-							<span class="page__content-blockquote-reference">Encyclopedia Galactica*</span>
-						</div>
-						<div class="page__content-text">
-							<p>
-								That's why you need to grab whatever chance you have of happiness where
+							<p class="page__content-blockquote-text">
+								REIKO - ...That's why you need to grab whatever chance you have of happiness where
 								you find it, and not worry about other people too much. My
 								experience tells me that we get no more than two or three such
 								chances in a lifetime, and if we let them go, we regret it for the rest of
-								our lives.
+								our lives...
+							</p>
+							<!-- <span class="page__content-blockquote-reference">Encyclopedia Galactica*</span> -->
+						</div>
+						<div class="page__content-text">
+							<p>
+								I first encountered Haruki Murakami's Norwegian Wood as a teenager, in a summer when I 
+								ate up Murakami books cover to cover in a couple of days each. A lot has changed in my perception 
+								of the messages of the book - for the better and worse -
+								re-reading it now as an adult with my own set of lived experiences, and this piece is a 
+								tribute to that journey. 
 							</p>
 							<p>
+								The stories in the book are almost exclusively told through the long dialogues between characters, 
+								usually Toru listening to one of the women's speeches while responding with a handful of words at best. 
+								I see Toru as a sounding board and processing mechanism for these stories, so I kept him apart. 
+								In contrast, each of the women near-monologues produces large colourful patches on their wings, 
+								and you can clearly make out Reiko's detailed backstory before her days at the sanatorium.
+							</p>
+							<p>
+								The more the characters share with each other, the more detailed and colourful their inner workings become
+								. Exchanging words is nothing but a dance. I hope you enjoy. 
+							</p>
+							<p class="page__content-blockquote-text">
 								"People are strange when you're a stranger."
 							</p>
+
+
 							<p>
 								"There's no need to raise your voice here. You don't have to convince anybody of anything, and you don't have
 								to attract anyone's attention."
@@ -86,18 +134,13 @@
 
 					<div class="book__page-front">
 						<div class="page__content">
-							<h1 class="page__content-book-title">Norwegian Wood</h1>
+							<h1 class="page__content-book-title">Butterfly dance</h1>
 							<h2 class="page__content-author">Dea Bankova</h2>
 							
 							<p class="page__content-credits">
 								Based on Haruki Murakami's
 								<span>Norwegian Wood</span>
 							</p>
-							
-							<!-- <p class="page__content-credits">
-								Illustrations by 
-								<span>Alex Wells</span>
-							</p> -->
 							
 							<div class="page__content-copyright">
 								<!-- <p>deabankova.com</p> -->
@@ -120,30 +163,26 @@
 										Each of the main characters of the book other than Toru - 
 										<span class="name">Naoko</span>, <span class="name">Midori</span>, <span class="name">Reiko</span>
 										 - is represented by one butterfly. Butterflies flap their wings as characters exchange words with each other.
-										
 									</p>
 								</div>
 							</div>
 							<div class="page__content-text" >
 								<p>
-									A line of dialogue spoken amongst them becomes one colourful patch in the Voronoi region of one of their wings,
-										with each complete dialogue forming a Voronoi cluster. 
-									The bigger and more saturated the colour of the 
-										patch, the longer that character spoke for uninterrupted. 
-
+									A line of dialogue becomes one colourful patch in the Voronoi region of one of their wings, each complete dialogue forming a Voronoi cluster. 
+									The bigger and more saturated the colour of the patch, the longer that character spoke for uninterrupted. 
 								</p>
-								The central butterfly for Toru stands out as being different. He does not have a complex Voronoi web, but 
-								only a simple ever-changing pattern. 
 								<p>
-
+									The central butterfly for <span class="name">Toru</span> is different. 
+									He does not have a complex Voronoi web, but only a simple ever-changing pattern. 
 								</p>
 							</div>
 
 							<div class="page__content-text" >
 								<span class="page__content-blockquote-text">SONG FLOWERS</span>
 								<p>
+									Music is central to Norwegian Wood; I had to incorporate it. 
 									Flowers appear next to the butterflies at times when one of the numerious songs 
-									mentioned in the book appears on the page. One special flower stands out - the deep maroon
+									mentioned in the book appears in the story. One special flower stands out - the deep maroon
 									<span class="norwegian-wood">Norwegian Wood</span>. 
 								</p>
 							</div>
