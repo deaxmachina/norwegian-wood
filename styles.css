@@ -178,12 +178,13 @@ text {
     transform: translate(-50%, -50%);
     color: var(--page-bg);
     text-align: center;
-    width: 300px;
+    width: 290px;
   }
 }
 .wrapper-mobile p {
   letter-spacing: 2px;
-  font-size: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.4;
 }
 
 .book-wrapper {

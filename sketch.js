@@ -164,22 +164,6 @@ function draw() {
 	} else {
 		noLoop()
 	}
-
-	/////////////////////////////////
-	/////// Mobile version //////////
-	/////////////////////////////////
-	if (windowHeight < 680 || windowWidth < 1150) {
-		loop()
-		push()
-		toru.gradation = frameCount
-		toru.setRotateWings(rotateToru)
-		rotateToru= -0.5*Math.PI + sin(frameCountToru)*0.2
-		frameCountToru++
-		translate(width/2, height/2)
-		toru.drawDragonflyToru()
-		pop()
-		return
-	}
 	
 	//////////////////////////////////
 	///////// Kumiko pattern /////////
@@ -206,6 +190,22 @@ function draw() {
 		}
 	}
 	pop()
+
+	/////////////////////////////////
+	/////// Mobile version //////////
+	/////////////////////////////////
+	if (windowHeight < 680 || windowWidth < 1150) {
+		loop()
+		push()
+		toru.gradation = frameCount
+		toru.setRotateWings(rotateToru)
+		rotateToru= -0.5*Math.PI + sin(frameCountToru)*0.2
+		frameCountToru++
+		translate(width/2, height/2)
+		toru.drawDragonflyToru()
+		pop()
+		return
+	}
 	
 
 	angleMode(RADIANS);
