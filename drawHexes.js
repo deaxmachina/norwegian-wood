@@ -24,7 +24,11 @@ function drawHexes(side, horde) {
 	fill('#5c5368')
 	translate(side*1.5, -horde)
 	drawHexagon(0, 0, side)
-	drawText('NAOKO 直子', 0, -horde+30, '#988ea2')
+	if (windowHeight <= 750) {
+		drawText('NAOKO 直子', 0, -horde+30, '#988ea2')
+	} else {
+		drawText('NAOKO 直子', 0, -horde-3, '#5c5368')
+	}
 	pop()
 	// Right and down
 	push()
@@ -32,7 +36,11 @@ function drawHexes(side, horde) {
 	fill('#5c5368')
 	translate(side*1.5, horde)
 	drawHexagon(0, 0, side)
-	drawText('REIKO 玲子', 0, horde - 13, '#988ea2')
+	if (windowHeight <= 750) {
+		drawText('REIKO 玲子', 0, horde - 13, '#988ea2')
+	} else {
+		drawText('REIKO 玲子', 0, horde+18, '#5c5368')
+	}
 	pop()
 	// Dicrectly down
 	push()
@@ -48,7 +56,6 @@ function drawHexes(side, horde) {
 	push()
 	stroke(strokeHex)
 	fill('#5c5368')
-	//fill(chosenCols[1])
 	translate(-side*1.5, -horde)
 	drawHexagon(0, 0, side)
 	drawText('MIDORI 緑', 0, horde+25)

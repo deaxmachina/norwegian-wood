@@ -1,4 +1,4 @@
-function drawText(textA, x, y,  fillA='#5c5368', textSizeA=24) {
+function drawText(textA, x, y,  fillA='#5c5368', textSizeA=22) {
 	push()
 	textSize(textSizeA)
 	noStroke()
@@ -9,7 +9,7 @@ function drawText(textA, x, y,  fillA='#5c5368', textSizeA=24) {
 	// textFont('retiro-std-48pt, sans-serif')
 	// textFont('niveau-grotesk, sans-serif')
 	// textFont('Tulpen One, sans-serif')
-	textFont('Cormorant Garamond, serif')
+	// textFont('Cormorant Garamond, serif')
 	textAlign(CENTER)
 	text(textA, x, y)
 	pop()

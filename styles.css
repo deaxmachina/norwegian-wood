@@ -1,23 +1,27 @@
 @import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,600|Tulpen+One&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,600|Tulpen+One&display=swap");
+@import url("https://use.typekit.net/jrz5sgd.css");
 :root {
   /* colors */
   --body-bg: #FAFAFA;
   --page-bg: rgb(232, 232, 232);
-  --dark-text: #2A2935;
+  --dark-text: #161212;
   /* spacing */
   /* this is what defines the global scale */
-  --baseline: 18px;
+  --baseline: 17px;
   /* fonts */
-  --book-title: "Tulpen One", sans-serif;
-  --title: "Cormorant Garamond", serif;
-  --body: "Cormorant Garamond", serif;
+  --book-title: "komu-a", sans-serif;
+  --title: "graphie", sans-serif;
+  --body: "graphie", sans-serif;
   --base-size: var(--baseline) * 1.2;
+}
+
+p, div, span, text {
+  font-family: var(--body);
+  font-weight: 100;
 }
 
 * {
   box-sizing: border-box;
-  font-family: "Cormorant Garamond", serif;
   margin: 0;
   padding: 0;
 }
@@ -27,10 +31,6 @@ body {
   margin: 0;
   padding: 0;
   background: #161212;
-}
-
-canvas {
-  overflow: hidden;
 }
 
 text {
@@ -44,10 +44,10 @@ text {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.2);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   transition: all 0.5s ease;
   overflow: hidden;
   cursor: pointer;
@@ -79,6 +79,8 @@ text {
   top: 50%;
   color: var(--page-bg);
   transform: translate(25px, -40%);
+  width: 50px;
+  line-height: 1;
 }
 .overlay .overlay-instructions .circles {
   height: 200px;
@@ -111,6 +113,11 @@ text {
   100% {
     opacity: 0;
     transform: scale(1);
+  }
+}
+@media (max-height: 680px) or (max-width: 1150px) {
+  .overlay {
+    display: none;
   }
 }
 
@@ -149,7 +156,33 @@ text {
   width: 80px;
   height: 60px;
   background-color: rgba(173, 20, 81, 0.5333333333);
-  z-index: 0;
+  z-index: 10;
+  opacity: 1;
+  transition: all 0.1s ease 0.4s;
+}
+@media (max-height: 680px) or (max-width: 1150px) {
+  .wrapper-about {
+    display: none;
+  }
+}
+
+.wrapper-mobile {
+  display: none;
+}
+@media (max-height: 680px) or (max-width: 1150px) {
+  .wrapper-mobile {
+    display: inline-block;
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--page-bg);
+    text-align: center;
+    width: 250px;
+  }
+}
+.wrapper-mobile p {
+  letter-spacing: 2px;
 }
 
 .book-wrapper {
@@ -199,20 +232,19 @@ text {
 }
 .book__page--1 .credits--mj {
   position: absolute;
-  left: 3px;
-  bottom: 3px;
-  font-size: 0.8rem;
+  left: 5px;
+  bottom: 5px;
+  font-size: 0.7rem;
   color: var(--dark-text);
 }
 .book__page--1 .credits--book {
   position: absolute;
   bottom: 20px;
-  left: 3px;
+  left: 5px;
 }
 .book__page--1 .credits--book a {
   color: var(--dark-text);
-  text-decoration: none;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 .book__page--2 {
   position: absolute;
@@ -307,7 +339,7 @@ text {
   text-transform: uppercase;
 }
 .book__page .page__content-blockquote {
-  margin-bottom: calc(var(--baseline) * 2);
+  margin-bottom: calc(var(--baseline) * 1);
 }
 .book__page .page__content-blockquote-text {
   font-family: var(--title);

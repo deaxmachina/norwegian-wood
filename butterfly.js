@@ -177,12 +177,13 @@ class Butterfly {
 		drawPolygon(this.ctx, this.butterflyWingPointsUpper, '#161212', 'white')
 		this.ctx.clip()
 		
+		const noise1 = noise(0.003 * this.gradation)
 		const noise2 = 1 - noise(0.01 * this.gradation)
-		const noise3 = noise(0.005 * this.gradation)
+		const noise3 = noise(0.006 * this.gradation)
 		
 		// Shape that will be clipped but the clipping wing shape - overlapping rects
 		this.ctx.fillStyle = '#ad1450'
-		this.ctx.fillRect(0, 0, 30, 25) 
+		this.ctx.fillRect(0, 0, 38 * noise1, 30 * noise1) 
 		this.ctx.fillStyle ='#dd125b' 
 		this.ctx.fillRect(0, 0, 27 * noise2, 26 * noise2) 
 		this.ctx.fillStyle = '#e84688'

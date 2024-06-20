@@ -121,6 +121,20 @@ function setup() {
 			looping = false
 			noLoop()
 		})
+
+		const radioButtonToPage1 = document.getElementById('page-1');
+		const radioButtonToPage2 = document.getElementById('page-2');
+    const pulloutInBook = document.querySelector('.pullout-in-book');
+    radioButtonToPage2.addEventListener('change', () => {
+      if (radioButtonToPage2.checked) {
+        pulloutInBook.style.opacity = 0
+      } 
+    })
+		radioButtonToPage1.addEventListener('change', () => {
+      if (radioButtonToPage1.checked) {
+        pulloutInBook.style.opacity = 1
+      } 
+    })
 }
 
 
@@ -147,7 +161,9 @@ function draw() {
 		noLoop()
 	}
 	
-	// Kumiko
+	//////////////////////////////////
+	///////// Kumiko pattern /////////
+	//////////////////////////////////
 	push()
 	angleMode(DEGREES);
 	translate(-width/2, -height/2)
@@ -159,20 +175,36 @@ function draw() {
 	for(let a=0; a<90; a++){
 		for(let b=0; b<90; b++){
 			noFill()
-			stroke('#2e323a') //['#988ea2', '#5c5368', '#161212','#e84688', '#dd125b', '#ad1450']
+			stroke('#2e323a') 
 			strokeWeight(0.5)
 
 			if((a+b)%2 == 0){
-				drawTriangle(b*padX, a*padY, r, 0); //右向き
+				drawTriangle(b*padX, a*padY, r, 0)
 			}else{
-				drawTriangle(b*padX+distX, a*padY, r, 180); //左向き
+				drawTriangle(b*padX+distX, a*padY, r, 180)
 			}
 		}
 	}
 	pop()
+
+	/////////////////////////////////
+	/////// Mobile version //////////
+	/////////////////////////////////
+	if (windowHeight < 680 || windowWidth < 1150) {
+		loop()
+		push()
+		toru.gradation = frameCount
+		toru.setRotateWings(rotateToru)
+		rotateToru= -0.5*Math.PI + sin(frameCountToru)*0.2
+		frameCountToru++
+		translate(width/2, height/2)
+		toru.drawDragonflyToru()
+		pop()
+		return
+	}
 	
+
 	angleMode(RADIANS);
-	
 	translate(width*0.5, height/2)
 	noFill()
 	noStroke()
@@ -276,6 +308,12 @@ function draw() {
 	translate(-width/2, -height/2)	
 	const barWidth = map(currentLineInDailogue, 0, allDialogueLines.length-1, 0, width)
 	rect(0, 0, barWidth, 8)
-	drawMusic(barWidth+6, 4, r, '#ad1450', 0.2, 0.8, 0, '', 'Norwegian Wood', '')
+	drawMusic(barWidth+6, 4, r, '#ad1450', 0.2, 0.8, frameCount, '', 'Norwegian Wood', '')
 	pop()
+}
+
+
+// Resize the canvas when the browser's size changes.
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
