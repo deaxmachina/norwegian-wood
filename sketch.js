@@ -49,6 +49,7 @@ function setup() {
 	createCanvas(windowWidth, windowHeight)
 	background(0)
 	frameRate(50)
+	// pixelDensity(4)
 	ctx = drawingContext // get the ctx of the new graphic
 	
 	// Setup drawing variables
@@ -105,11 +106,13 @@ function setup() {
 		const overlay = document.querySelector('.overlay')
 		const wrapperAbout = document.querySelector('.wrapper-about')
 		const bookPullout = document.querySelector('.pullout')
+		const bookPulloutText = document.querySelector('.pullout span')
 		overlay.addEventListener('click', () => {
 			wrapperAbout.style.left = '100%'
 			wrapperAbout.style.transform = 'translate(0%, -50%)'
 			overlay.style.opacity = 0
 			overlay.style.pointerEvents = 'none'
+			bookPulloutText.style.opacity = 1
 			looping = true
 			loop()
 		})
@@ -118,6 +121,7 @@ function setup() {
 			wrapperAbout.style.transform = 'translate(-50%, -50%)'
 			overlay.style.opacity = 1
 			overlay.style.pointerEvents = 'all'
+			bookPulloutText.style.opacity = 0
 			looping = false
 			noLoop()
 		})
@@ -160,6 +164,22 @@ function draw() {
 	} else {
 		noLoop()
 	}
+
+	/////////////////////////////////
+	/////// Mobile version //////////
+	/////////////////////////////////
+	if (windowHeight < 680 || windowWidth < 1150) {
+		loop()
+		push()
+		toru.gradation = frameCount
+		toru.setRotateWings(rotateToru)
+		rotateToru= -0.5*Math.PI + sin(frameCountToru)*0.2
+		frameCountToru++
+		translate(width/2, height/2)
+		toru.drawDragonflyToru()
+		pop()
+		return
+	}
 	
 	//////////////////////////////////
 	///////// Kumiko pattern /////////
@@ -186,22 +206,6 @@ function draw() {
 		}
 	}
 	pop()
-
-	/////////////////////////////////
-	/////// Mobile version //////////
-	/////////////////////////////////
-	if (windowHeight < 680 || windowWidth < 1150) {
-		loop()
-		push()
-		toru.gradation = frameCount
-		toru.setRotateWings(rotateToru)
-		rotateToru= -0.5*Math.PI + sin(frameCountToru)*0.2
-		frameCountToru++
-		translate(width/2, height/2)
-		toru.drawDragonflyToru()
-		pop()
-		return
-	}
 	
 
 	angleMode(RADIANS);

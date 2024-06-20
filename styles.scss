@@ -43,6 +43,17 @@ text {
 	font-weight: 100;
 }
 
+@keyframes growAndFade {
+  0% {
+    opacity: .25;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
 .overlay {
 	position: absolute;
 	top: 0;
@@ -95,7 +106,6 @@ text {
         position: absolute;
         width: 100%;
       }
-      
       .circle1 {
         animation-delay: 1s;    
       }
@@ -104,17 +114,6 @@ text {
       }
       .circle3 {
         animation-delay: 3s;
-      }
-    }
-    
-    @keyframes growAndFade {
-      0% {
-        opacity: .25;
-        transform: scale(0);
-      }
-      100% {
-        opacity: 0;
-        transform: scale(1);
       }
     }
   }
@@ -177,11 +176,12 @@ text {
     transform: translate(-50%, -50%);
     color: var(--page-bg);
     text-align: center;
-    width: 250px;
+    width: 300px;
   }
   p {
     // font-family: var(--book-title);
     letter-spacing: 2px;
+    font-size: 2rem;
   }
 }
 
@@ -277,6 +277,32 @@ text {
       width: 100%;
       height: 100%;
       transform: rotateY(0deg) translateZ(1px);
+      overflow: hidden;
+      .circles {
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        bottom: -100px;
+        right: -100px;
+        > div {
+          animation: growAndFade 3s infinite ease-out;
+          background-color: #ad1450;
+          border-radius: 50%;
+          height: 100%;
+          opacity: 0;
+          position: absolute;
+          width: 100%;
+        }
+        .circle1 {
+          animation-delay: 1s;    
+        }
+        .circle2 {
+          animation-delay: 2s; 
+        }
+        .circle3 {
+          animation-delay: 3s;
+        }
+      }
     }
     
     &-back {
