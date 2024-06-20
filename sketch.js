@@ -14,7 +14,8 @@ let gradation = 0
 let musicData
 let music
 
-const chosenCols = ['#988ea2', '#5c5368', '#161212','#e84688', '#dd125b', '#ad1450']
+const butterflyCols = ['#988ea2', '#5c5368', '#161212','#e84688', '#dd125b', '#ad1450']
+const flowerCols = ['#47b176', '#80ed99', '#2ec4b6'] // ['#47b176', '#5bb224', '#98c21d', '#2ec4b6']
 const bgCol = '#161212'
 
 // Init the 'butterflies' (named after the characters)
@@ -47,7 +48,7 @@ function setup() {
 	// Setup the canvas 
 	createCanvas(windowWidth, windowHeight)
 	background(0)
-	frameRate(60)
+	frameRate(50)
 	ctx = drawingContext // get the ctx of the new graphic
 	
 	// Setup drawing variables
@@ -55,7 +56,7 @@ function setup() {
 	horde = side * sin(PI/3) // How much to translate from the center
 	
 	// Get all the data in a flat array
-	allDialogueLines = getAllDialogueLines(dialoguesData, chosenCols)
+	allDialogueLines = getAllDialogueLines(dialoguesData, butterflyCols)
 
 	// Initial data values = first line by each character
 	const firstLineByNaoko = _.find(allDialogueLines, d => d.person === 'Naoko')
@@ -70,24 +71,23 @@ function setup() {
 	
 	// Create the character-butterflies, initialise with the initial data 
 	// and save them into the butterflies array 
-	toru = new Butterfly('Toru', [], ctx, chosenCols, 0, -horde*0.32, 0.4, 0)
-	naoko = new Butterfly('Naoko', dataNaokoRightWing, ctx, chosenCols, side*1.7, -horde*1.1, 0.5, -PI*0.55)
-	reiko = new Butterfly('Reiko', dataReikoRightWing, ctx, chosenCols, side*1, horde*1.15, 0.45, -PI*0.15)
-	midori = new Butterfly('Midori', dataMidoriRightWing, ctx, chosenCols, -side*1.5, -horde*1, 0.6, PI*0.65)
+	toru = new Butterfly('Toru', [], ctx, butterflyCols, 0, -horde*0.32, 0.4, 0)
+	naoko = new Butterfly('Naoko', dataNaokoRightWing, ctx, butterflyCols, side*1.7, -horde*1.1, 0.5, -PI*0.60)
+	reiko = new Butterfly('Reiko', dataReikoRightWing, ctx, butterflyCols, side*1, horde*1.15, 0.45, -PI*0.15)
+	midori = new Butterfly('Midori', dataMidoriRightWing, ctx, butterflyCols, -side*1.5, -horde*1, 0.6, PI*0.65)
 	butterflies.push(toru)
 	butterflies.push(naoko)
 	butterflies.push(reiko)
 	butterflies.push(midori)
 	
 	// Music data (flowers)
-	// random(['#47b176', '#5bb224', '#98c21d', '#2ec4b6']),
 	music = Object.values(musicData).map(d => {
 		return {
 			...d,
 			x: random([random(10, width * 0.4), random(10, width * 0.5), random(width*0.8, width-30)]),
 			y: height*0.95 - random(height * 0.4),
 			r: random(30, 100),
-			fillA: d.song === 'Norwegian Wood' ? '#ad1450' : random(['#47b176', '#80ed99', '#2ec4b6']),
+			fillA: d.song === 'Norwegian Wood' ? '#ad1450' : random(flowerCols),
 			scaleA: d.song === 'Norwegian Wood' ? 0.7 : random(0.2, 0.7),
 			opacityA: d.song === 'Norwegian Wood' ? 0.85 : random(0.18, 0.75),
 			rotationA: random(0, 360),
@@ -104,7 +104,6 @@ function setup() {
 		// Events
 		const overlay = document.querySelector('.overlay')
 		const wrapperAbout = document.querySelector('.wrapper-about')
-		const bookPageOne = document.querySelector('.book__page.book__page--1')
 		const bookPullout = document.querySelector('.pullout')
 		overlay.addEventListener('click', () => {
 			wrapperAbout.style.left = '100%'
@@ -229,8 +228,8 @@ function draw() {
 		frameCountMidori++
 	}
 	if (currentLineInDailogue >= allDialogueLines.length-1) {
-		currentLineInDailogue = allDialogueLines.length-2
-		//noLoop()
+		// currentLineInDailogue = allDialogueLines.length-2
+		noLoop()
 	}
 	currentLineInDailogue++
 	//currentLineInDailogue += frameCount%3 === 0 ? 1 : 0 // to slow down the speed of data update
@@ -267,65 +266,16 @@ function draw() {
 		}
 	})
 	pop()
-}
 
 
-
-/////////////////////////////
-///// Draw the hexagons /////
-/////////////////////////////
-function drawHexes(side, horde) {
-	const strokeHex = bgCol
+	/////////////////////////////
+	////// Draw progress bar ////
+	/////////////////////////////
 	push()
-	strokeWeight(10)
-	// Center 
-	push()
-	stroke(strokeHex)
-	fill('#dd125b')
-	//fill(chosenCols[3])
-	drawHexagon(0, 0, side)
-	drawText('TORU トオル', 0, -horde, '#dd125b')
-	pop()
-	// Directly up 
-	push()
-	translate(0, -horde*2)
-	drawHexagon(0, 0, side)
-	pop()	
-	// Right and up
-	push()
-	stroke(strokeHex)
-	fill('#5c5368')
-	translate(side*1.5, -horde)
-	drawHexagon(0, 0, side)
-	drawText('NAOKO 直子', 0, -horde)
-	pop()
-	// Right and down
-	push()
-	stroke(strokeHex)
-	fill('#5c5368')
-	translate(side*1.5, horde)
-	drawHexagon(0, 0, side)
-	drawText('REIKO 玲子', 0, horde - 13, '#988ea2')
-	pop()
-	// Dicrectly down
-	push()
-	translate(0, horde*2)
-	drawHexagon(0, 0, side)
-	pop()
-	// Left and down
-	push()
-	translate(-side*1.5, horde)
-	drawHexagon(0, 0, side)
-	pop()
-	// Left and up 
-	push()
-	stroke(strokeHex)
-	fill('#5c5368')
-	//fill(chosenCols[1])
-	translate(-side*1.5, -horde)
-	drawHexagon(0, 0, side)
-	drawText('MIDORI 緑', 0, horde+25)
-	pop()
+	fill(red('#5c5368'), green('#5c5368'), blue('#5c5368'), 100)
+	translate(-width/2, -height/2)	
+	const barWidth = map(currentLineInDailogue, 0, allDialogueLines.length-1, 0, width)
+	rect(0, 0, barWidth, 8)
+	drawMusic(barWidth+6, 4, r, '#ad1450', 0.2, 0.8, 0, '', 'Norwegian Wood', '')
 	pop()
 }
-
