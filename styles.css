@@ -31,6 +31,7 @@ body {
   margin: 0;
   padding: 0;
   background: #161212;
+  overflow: hidden;
 }
 
 text {
@@ -304,7 +305,7 @@ text {
   height: 100%;
   position: relative;
   text-align: center;
-  overflow: scroll;
+  overflow: hidden;
 }
 .book__page .page__content-book-title {
   font-family: var(--book-title);
