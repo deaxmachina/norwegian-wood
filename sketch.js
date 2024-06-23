@@ -1,6 +1,7 @@
 // Init the data
 let dialoguesData
 let allDialogueLines
+
 // Keep track of dialogue data time goes
 let dataNaokoLeftWing = []
 let dataNaokoRightWing = []
@@ -70,8 +71,7 @@ function setup() {
 	dataMidoriRightWing.push(firstLineByMidori)
 	dataMidoriLeftWing.push(firstLineByMidori)
 	
-	// Create the character-butterflies, initialise with the initial data 
-	// and save them into the butterflies array 
+	// Create the character-butterflies, initialise with the initial data and save them into the butterflies array 
 	toru = new Butterfly('Toru', [], ctx, butterflyCols, 0, -horde*0.32, 0.4, 0)
 	naoko = new Butterfly('Naoko', dataNaokoRightWing, ctx, butterflyCols, side*1.7, -horde*1.1, 0.5, -PI*0.60)
 	reiko = new Butterfly('Reiko', dataReikoRightWing, ctx, butterflyCols, side*1, horde*1.15, 0.45, -PI*0.15)
@@ -102,45 +102,44 @@ function setup() {
       music = [...music]
     })
 	
-		// Events
-		const overlay = document.querySelector('.overlay')
-		const wrapperAbout = document.querySelector('.wrapper-about')
-		const bookPullout = document.querySelector('.pullout')
-		const bookPulloutText = document.querySelector('.pullout span')
-		overlay.addEventListener('click', () => {
-			wrapperAbout.style.left = '100%'
-			wrapperAbout.style.transform = 'translate(0%, -50%)'
-			overlay.style.opacity = 0
-			overlay.style.pointerEvents = 'none'
-			bookPulloutText.style.opacity = 1
-			looping = true
-			loop()
-		})
-		bookPullout.addEventListener('click', () => {
-			wrapperAbout.style.left = '50%'
-			wrapperAbout.style.transform = 'translate(-50%, -50%)'
-			overlay.style.opacity = 1
-			overlay.style.pointerEvents = 'all'
-			bookPulloutText.style.opacity = 0
-			looping = false
-			noLoop()
-		})
+	// Events
+	const overlay = document.querySelector('.overlay')
+	const wrapperAbout = document.querySelector('.wrapper-about')
+	const bookPullout = document.querySelector('.pullout')
+	const bookPulloutText = document.querySelector('.pullout span')
+	overlay.addEventListener('click', () => {
+		wrapperAbout.style.left = '100%'
+		wrapperAbout.style.transform = 'translate(0%, -50%)'
+		overlay.style.opacity = 0
+		overlay.style.pointerEvents = 'none'
+		bookPulloutText.style.opacity = 1
+		looping = true
+		loop()
+	})
+	bookPullout.addEventListener('click', () => {
+		wrapperAbout.style.left = '50%'
+		wrapperAbout.style.transform = 'translate(-50%, -50%)'
+		overlay.style.opacity = 1
+		overlay.style.pointerEvents = 'all'
+		bookPulloutText.style.opacity = 0
+		looping = false
+		noLoop()
+	})
 
-		const radioButtonToPage1 = document.getElementById('page-1');
-		const radioButtonToPage2 = document.getElementById('page-2');
+	const radioButtonToPage1 = document.getElementById('page-1');
+	const radioButtonToPage2 = document.getElementById('page-2');
     const pulloutInBook = document.querySelector('.pullout-in-book');
     radioButtonToPage2.addEventListener('change', () => {
       if (radioButtonToPage2.checked) {
         pulloutInBook.style.opacity = 0
       } 
     })
-		radioButtonToPage1.addEventListener('change', () => {
+	radioButtonToPage1.addEventListener('change', () => {
       if (radioButtonToPage1.checked) {
         pulloutInBook.style.opacity = 1
       } 
     })
 }
-
 
 
 ///////////////////////////////
@@ -308,7 +307,7 @@ function draw() {
 	////// Draw progress bar ////
 	/////////////////////////////
 	push()
-	fill(red('#5c5368'), green('#5c5368'), blue('#5c5368'), 100)
+	fill(red('#5c5368'), green('#5c5368'), blue('#5c5368'), 130)
 	translate(-width/2, -height/2)	
 	const barWidth = map(currentLineInDailogue, 0, allDialogueLines.length-1, 0, width)
 	rect(0, 0, barWidth, 8)
